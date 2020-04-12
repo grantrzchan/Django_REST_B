@@ -1,0 +1,1 @@
+# Basic REST API Example in Python using the Django and Django REST framework
