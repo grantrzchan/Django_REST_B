@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
-from django.contrib.auth.models import PermissionMixin
+from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
 
 
@@ -26,7 +26,7 @@ class UserProfileManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-class UserProfile(AbstractBaseUser, PermissionMixin):
+class UserProfile(AbstractBaseUser, PermissionsMixin):
     """Database model for users in the system"""
     #create email column in UserProfile database table, with EmailField, max_length-255, field must be unique
     email = models.EmailField(max_length=255, unique=True)
